@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+.header {
+  display: flex;
+  gap: 25px;
+}
+
+.branch-select-card {
+  display: flex;
+}
+
+.branch-selection {
+  color: #797979;
+  background-color: #ffffff;
+  border: solid 1px #000000;
+  border-radius: 25px;
+  padding: 0px 50px 0px 50px;
+}
+
+.refresh-button {
+  color: #ffffff;
+  background-color: #CE1616;
+}
+
+h1 {
+  font-size: 24px;
+}
