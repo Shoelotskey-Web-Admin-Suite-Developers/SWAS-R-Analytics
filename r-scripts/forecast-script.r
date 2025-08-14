@@ -1,4 +1,3 @@
-# Load required libraries
 library(dplyr)
 library(lubridate)
 library(forecast)
@@ -6,18 +5,18 @@ library(jsonlite)
 library(tidyr)
 
 # --- 1. Read CSV ---
-# Replace with your CSV file path
 data <- read.csv("data/daily_transactions_may15_aug15_2025.csv", stringsAsFactors = FALSE)
 
-# Ensure date format
-data$date_time <- mdy_hm(data$date_time)  # month/day/year format
+# Parse date_time (adjust depending on your CSV format)
+data$date_time <- mdy_hm(data$date_time)   # or ymd_hm/as.POSIXct if needed
+data$date <- as.Date(data$date_time)       # keep only the date
 
 # --- 2. Aggregate revenue per branch per day ---
 daily <- data %>%
-  group_by(date_time, branch_id) %>%
+  group_by(date, branch_id) %>%
   summarise(revenue = sum(revenue), .groups = "drop") %>%
   pivot_wider(names_from = branch_id, values_from = revenue, values_fill = 0) %>%
-  arrange(date_time)
+  arrange(date)
 
 # Rename columns to match chart keys
 daily <- daily %>%
@@ -35,51 +34,37 @@ forecast_branch <- function(series, h = 7) {
   as.numeric(fc$mean)
 }
 
-# Forecast for each branch
 fc_days <- 7
 SMValFC <- forecast_branch(daily$SMVal, fc_days)
 ValFC   <- forecast_branch(daily$Val, fc_days)
 SMGraFC <- forecast_branch(daily$SMGra, fc_days)
 
 # --- 4. Prepare forecast dates ---
-last_date <- max(daily$date_time)
+last_date <- max(daily$date)
 fc_dates <- seq.Date(from = last_date + 1, by = "day", length.out = fc_days)
 
-# --- 5. Combine actual and forecast data ---
-actual_data <- daily %>%
-  mutate(
-    SMValFC = NA,
-    ValFC = NA,
-    SMGraFC = NA,
-    total = SMVal + Val + SMGra,
-    totalFC = NA
-  )
+# --- 5. Prepare JSON outputs ---
 
+# Past totals only
+totals_data <- daily %>%
+  mutate(total = SMVal + Val + SMGra) %>%
+  select(date, SMVal, Val, SMGra, total)
+
+# Forecast only
 forecast_data <- data.frame(
-  date_time = fc_dates,
-  SMVal = NA,
-  Val = NA,
-  SMGra = NA,
+  date = fc_dates,
   SMValFC = SMValFC,
   ValFC = ValFC,
   SMGraFC = SMGraFC,
-  total = NA,
   totalFC = SMValFC + ValFC + SMGraFC
 )
 
-# Combine actual + forecast
-chart_data <- bind_rows(actual_data, forecast_data)
-
-# Format date as in your React chart (e.g., "May 31")
-chart_data$date <- format(chart_data$date_time, "%b %d")
-
-# Select and order columns as needed
-chart_data <- chart_data %>%
-  select(
-    date, SMVal, SMValFC, Val, ValFC, SMGra, SMGraFC, total, totalFC
-  )
-
 # --- 6. Export JSON ---
-write_json(chart_data, "output/daily_revenue_forecast.json", pretty = TRUE)
+if(!dir.exists("output")) dir.create("output")
 
-cat("✅ JSON exported to daily_revenue_forecast.json\n")
+write_json(totals_data, "output/daily_revenue_totals.json", pretty = TRUE)
+write_json(forecast_data, "output/daily_revenue_forecast.json", pretty = TRUE)
+
+cat("✅ JSON exported:\n")
+cat("- output/daily_revenue_totals.json\n")
+cat("- output/daily_revenue_forecast.json\n")
