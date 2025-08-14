@@ -8,11 +8,8 @@ library(tidyr)
 # --- 1. Read CSV ---
 data <- read.csv("data/daily_transactions_may15_aug15_2025.csv", stringsAsFactors = FALSE)
 
-# Ensure proper date format
-data$date_time <- mdy_hm(data$date_time)  # month/day/year format
-
-# Strip time and keep only date
-data$date_time <- as.Date(data$date_time)
+# Ensure proper date format and keep only the date
+data$date_time <- as.Date(mdy_hm(data$date_time))
 
 # --- 2. Aggregate revenue per branch per day ---
 daily <- data %>%
@@ -44,7 +41,7 @@ last_date <- max(daily$date_time)
 fc_dates <- seq.Date(from = last_date + 1, by = "day", length.out = fc_days)
 fc_dates_formatted <- format(fc_dates, "%b %d")  # e.g., "Aug 16"
 
-# --- 5. Prepare forecast data frame ---
+# --- 5. Prepare forecast data frame only ---
 forecast_data <- data.frame(
   date = fc_dates_formatted,
   SMValFC = SMValFC,
@@ -52,20 +49,7 @@ forecast_data <- data.frame(
   SMGraFC = SMGraFC
 )
 
-# --- 6. Prepare actual data with 'date' column for consistency ---
-actual_data <- daily %>%
-  mutate(
-    date = format(date_time, "%b %d"),
-    SMValFC = NA,
-    ValFC = NA,
-    SMGraFC = NA
-  ) %>%
-  select(date, SMValFC, ValFC, SMGraFC)
+# --- 6. Export JSON ---
+write_json(forecast_data, "r-scripts/output/daily_revenue_forecast.json", pretty = TRUE)
 
-# --- 7. Combine actual + forecast data ---
-chart_data <- bind_rows(actual_data, forecast_data)
-
-# --- 8. Export JSON ---
-write_json(chart_data, "output/daily_revenue_forecast.json", pretty = TRUE)
-
-cat("✅ JSON exported to output/daily_revenue_forecast.json\n")
+cat("✅ JSON exported to r-scripts/output/daily_revenue_forecast.json\n")
