@@ -1,4 +1,3 @@
-# Load required libraries
 library(dplyr)
 library(lubridate)
 library(forecast)
@@ -13,7 +12,7 @@ data$date_time <- as.Date(mdy_hm(data$date_time))
 
 # --- 2. Aggregate revenue per branch per day ---
 daily <- data %>%
-  group_by(date_time, branch_id) %>%
+  group_by(date, branch_id) %>%
   summarise(revenue = sum(revenue), .groups = "drop") %>%
   pivot_wider(names_from = branch_id, values_from = revenue, values_fill = 0) %>%
   arrange(date_time) %>%
@@ -37,7 +36,7 @@ ValFC   <- forecast_branch(daily$Val, fc_days)
 SMGraFC <- forecast_branch(daily$SMGra, fc_days)
 
 # --- 4. Prepare forecast dates ---
-last_date <- max(daily$date_time)
+last_date <- max(daily$date)
 fc_dates <- seq.Date(from = last_date + 1, by = "day", length.out = fc_days)
 fc_dates_formatted <- format(fc_dates, "%b %d")  # e.g., "Aug 16"
 
