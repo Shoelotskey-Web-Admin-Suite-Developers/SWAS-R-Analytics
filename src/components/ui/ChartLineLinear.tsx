@@ -145,7 +145,7 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
             />
             
             <ReferenceArea x1="Jun 6" x2="Jun 13" strokeOpacity={0} fill="#F0F0F0" />
-            <ReferenceArea x1="Jun 6" x2="Jun 7" strokeOpacity={0} fill="url(#yellowStripes)" />
+            <ReferenceArea x1="Jun 6" x2="Jun 8" strokeOpacity={0} fill="url(#yellowStripes)" />
 
             <ChartTooltip cursor content={<ChartTooltipContent indicator="line" />} />
 
