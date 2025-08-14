@@ -1,6 +1,6 @@
 "use client"
 
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import {
   Card,
   CardContent,
@@ -40,7 +40,7 @@ const branchMap: Record<string, keyof typeof rawData[0]> = {
   "1": "smVal",
   "2": "val",
   "3": "smGrand",
-  "4": "total"
+  "4": "total",
 }
 
 const chartConfig = {
@@ -95,6 +95,13 @@ export function ChartBarMultiple({ selectedBranches }: ChartBarMultipleProps) {
         <ChartContainer config={chartConfig} style={{ width: "1340px", height: "160px" }}>
           <BarChart accessibilityLayer data={dataWithTotal} margin={{ left: 12, right: 12 }}>
             <CartesianGrid vertical={false} />
+            <YAxis 
+              tickCount={5}
+              width={45}
+              axisLine={false}
+              tickLine={false}
+              label={{ value: "Revenue", angle: -90, position: "insideLeft", style: { textAnchor: "middle", fill: "var(--foreground)", fontSize: 14 } }}
+            />
             <XAxis
               dataKey="month"
               tickLine={false}

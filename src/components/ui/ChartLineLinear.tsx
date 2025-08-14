@@ -53,7 +53,7 @@ const chartConfig = {
 
 // Hollow dot renderer for forecast lines
 const hollowDot = (color: string) => (props: any) => {
-  if (props.value === null || props.value === undefined) return null;
+  if (props.value === null || props.value === undefined) return null as unknown as React.ReactElement;
   const { cx, cy } = props
   return (
     <circle
