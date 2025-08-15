@@ -85,8 +85,7 @@ monthly_totals_full <- monthly_totals_full %>%
   arrange(month)
 
 # --- 7. Export JSON ---
-if(!dir.exists("output")) dir.create("output")
-write_json(monthly_totals_full, json_file, pretty = TRUE)
+write_json(monthly_totals_full, "public/output/monthly_totals_full.json", pretty = TRUE)
 
 cat("✅ Monthly totals updated for:", paste(months_to_update, collapse = ", "), "\n")
 cat("📄 Output file:", json_file, "\n")

@@ -35,6 +35,6 @@ daily_revenue <- daily_revenue %>%
 
 # --- 5. Export JSON ---
 
-write_json(daily_revenue, "r-scripts/output/daily_revenue.json", pretty = TRUE)
+write_json(daily_revenue, "public/output/daily_revenue.json", pretty = TRUE)
 
 cat("✅ JSON exported to output/daily_revenue/daily_revenue.json\n")

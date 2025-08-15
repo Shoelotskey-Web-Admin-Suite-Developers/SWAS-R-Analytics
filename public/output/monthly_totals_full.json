@@ -1,38 +1,38 @@
 [
   {
     "month": "2025-01",
-    "SMVal": 40000,
-    "Val": 38000,
-    "SMGra": 37000,
-    "total": 115000
+    "SMVal": 0,
+    "Val": 0,
+    "SMGra": 0,
+    "total": 0
   },
   {
     "month": "2025-02",
-    "SMVal": 42000,
-    "Val": 39500,
-    "SMGra": 38500,
-    "total": 120000
+    "SMVal": 0,
+    "Val": 0,
+    "SMGra": 0,
+    "total": 0
   },
   {
     "month": "2025-03",
-    "SMVal": 45000,
-    "Val": 42000,
-    "SMGra": 41000,
-    "total": 128000
+    "SMVal": 0,
+    "Val": 0,
+    "SMGra": 0,
+    "total": 0
   },
   {
     "month": "2025-04",
-    "SMVal": 48000,
-    "Val": 45000,
-    "SMGra": 44000,
-    "total": 137000
+    "SMVal": 0,
+    "Val": 0,
+    "SMGra": 0,
+    "total": 0
   },
   {
     "month": "2025-05",
-    "SMVal": 66473.36,
-    "Val": 63701.52,
-    "SMGra": 61536.32,
-    "total": 191711.2
+    "SMVal": 0,
+    "Val": 0,
+    "SMGra": 0,
+    "total": 0
   },
   {
     "month": "2025-06",

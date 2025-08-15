@@ -49,6 +49,6 @@ forecast_data <- data.frame(
 )
 
 # --- 6. Export JSON ---
-write_json(forecast_data, "r-scripts/output/daily_revenue_forecast.json", pretty = TRUE)
+write_json(forecast_data, "public/output/daily_revenue_forecast.json", pretty = TRUE)
 
 cat("✅ JSON exported to r-scripts/output/daily_revenue_forecast.json\n")
