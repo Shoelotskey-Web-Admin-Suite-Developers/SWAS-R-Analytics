@@ -1,6 +1,4 @@
-"use client"
-
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts"
 import { format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
@@ -28,34 +26,6 @@ interface ChartLineLinearProps {
   selectedBranches: string[];
 }
 
-// Generate dummy data for 3 months ending Aug 15 2024
-const generateDummyData = () => {
-  const data = []
-  const endDate = new Date("2025-08-15")
-  const startDate = new Date(endDate)
-  startDate.setMonth(startDate.getMonth() - 3)
-
-  let currentDate = new Date(startDate)
-  while (currentDate <= endDate) {
-    data.push({
-      date: currentDate.toISOString().split("T")[0],
-      smVal: Math.floor(Math.random() * 200) + 300,
-      val: Math.floor(Math.random() * 150) + 250,
-      smGrand: Math.floor(Math.random() * 180) + 320
-    })
-    currentDate.setDate(currentDate.getDate() + 1)
-  }
-  return data
-}
-
-const rawData = generateDummyData()
-
-// Compute total
-const chartData = rawData.map(item => ({
-  ...item,
-  total: item.smVal + item.val + item.smGrand
-}))
-
 const chartConfig = {
   total: {
     label: "SM Total of Branches",
@@ -76,11 +46,26 @@ const chartConfig = {
 } satisfies ChartConfig
 
 export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
-  const [startDate, setStartDate] = useState(rawData[0].date)
-  const [endDate, setEndDate] = useState(rawData[rawData.length - 1].date)
+  const [rawData, setRawData] = useState<any[]>([])
+  const [startDate, setStartDate] = useState<string>("")
+  const [endDate, setEndDate] = useState<string>("")
+
+  // Fetch JSON from public folder
+  useEffect(() => {
+    fetch("/output/sales_over_time.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setRawData(data)
+        if (data.length > 0) {
+          setStartDate(data[0].date)
+          setEndDate(data[data.length - 1].date)
+        }
+      })
+      .catch((err) => console.error("Error loading revenue data:", err))
+  }, [])
 
   // Filter by date range
-  const filteredByDate = chartData.filter(item => {
+  const filteredByDate = rawData.filter(item => {
     return (!startDate || item.date >= startDate) &&
            (!endDate || item.date <= endDate)
   })
@@ -94,16 +79,10 @@ export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
     total: selectedBranches.includes("4") || selectedBranches.length === 0 ? item.total : null,
   }))
 
-  // Dynamically decide how many ticks to show
-  const days = filteredData.length
-  const intervalValue = days > 45 ? Math.ceil(days / 6) : 0
-
-  // Determine tick indices that are displayed on XAxis
   const maxTicks = 6
   const tickIndices = filteredData
     .map((_, i) => i)
     .filter(i => i % Math.ceil(filteredData.length / maxTicks) === 0)
-
 
   return (
     <Card className="rounded-3xl">
@@ -145,7 +124,6 @@ export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
               tickMargin={8}
               interval={0}
               tickFormatter={(value, index) => {
-                const maxTicks = 6
                 const shouldShow = index % Math.ceil(filteredData.length / maxTicks) === 0
                 return shouldShow ? value.slice(5) : ""
               }}
