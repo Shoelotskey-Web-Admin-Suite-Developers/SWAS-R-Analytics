@@ -1,0 +1,1 @@
+write_json(daily_revenue, "public/output/daily_revenue.json", pretty = TRUE)
