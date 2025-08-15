@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { CartesianGrid, Line, LineChart, XAxis, YAxis, ReferenceArea } from "recharts"
 import {
   Card,
@@ -15,28 +16,13 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
+import { getPairedRevenueData } from "@/utils/getForecastChart"
+
 interface ChartLineLinearProps {
   selectedBranches: string[]
 }
 
 export const description = "A linear line chart"
-
-const rawChartData = [
-  { date: "May 31", SMVal: 4200, SMValFC: 5300, Val: 1200, ValFC: 1300, SMGra: 800, SMGraFC: 700 },
-  { date: "Jun 1",  SMVal: 8500, SMValFC: 9700, Val: 2000, ValFC: 2100, SMGra: 1500, SMGraFC: 1600 },
-  { date: "Jun 2",  SMVal: 2300, SMValFC: 1500, Val: 900,  ValFC: 1000, SMGra: 700,  SMGraFC: 600 },
-  { date: "Jun 3",  SMVal: 7900, SMValFC: 7700, Val: 1500, ValFC: 1400, SMGra: 1100, SMGraFC: 1000 },
-  { date: "Jun 4",  SMVal: 6800, SMValFC: 6500, Val: 2000, ValFC: 2100, SMGra: 1200, SMGraFC: 1300 },
-  { date: "Jun 5",  SMVal: 5400, SMValFC: 7500, Val: 1300, ValFC: 1200, SMGra: 900,  SMGraFC: 1000 },
-  { date: "Jun 6",  SMVal: 1200, SMValFC: 1800, Val: 800,  ValFC: 900,  SMGra: 400,  SMGraFC: 500 },
-  { date: "Jun 7",  SMValFC: 1400, ValFC: 900,  SMGraFC: 500 },
-  { date: "Jun 8",  SMValFC: 1600, ValFC: 1100, SMGraFC: 600 },
-  { date: "Jun 9",  SMValFC: 1500, ValFC: 800,  SMGraFC: 700 },
-  { date: "Jun 10", SMValFC: 2000, ValFC: 1200, SMGraFC: 900 },
-  { date: "Jun 11", SMValFC: 1700, ValFC: 1000, SMGraFC: 600 },
-  { date: "Jun 12", SMValFC: 1800, ValFC: 900,  SMGraFC: 800 },
-  { date: "Jun 13", SMValFC: 1500, ValFC: 1100, SMGraFC: 500 },
-]
 
 const chartConfig = {
   total: { label: "Total of Branches", color: "hsl(var(--chart-1))" },
@@ -50,7 +36,7 @@ const chartConfig = {
 } satisfies ChartConfig
 
 const hollowDot = (color: string) => (props: any) => {
-  if (props.value === null || props.value === undefined) return null as unknown as React.ReactElement;
+  if (props.value === null || props.value === undefined) return null as unknown as React.ReactElement
   const { cx, cy } = props
   return (
     <circle cx={cx} cy={cy} r={3} fill="white" stroke={color} strokeWidth={2} opacity={0.5} />
@@ -58,13 +44,27 @@ const hollowDot = (color: string) => (props: any) => {
 }
 
 export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
-  const chartData = rawChartData.map((item, index) => ({
-    ...item,
-    total: index < 7
-      ? (item.SMVal ?? 0) + (item.Val ?? 0) + (item.SMGra ?? 0)
-      : null,
-    totalFC: (item.SMValFC ?? 0) + (item.ValFC ?? 0) + (item.SMGraFC ?? 0),
-  }))
+  const [chartData, setChartData] = useState<any[]>([])
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const data = await getPairedRevenueData()
+        setChartData(
+          data.map((item: any, index: number) => ({
+            ...item,
+            total: index < 7
+              ? (item.SMVal ?? 0) + (item.Val ?? 0) + (item.SMGra ?? 0)
+              : null,
+            totalFC: (item.SMValFC ?? 0) + (item.ValFC ?? 0) + (item.SMGraFC ?? 0),
+          }))
+        )
+      } catch (err) {
+        console.error("Error fetching chart data:", err)
+      }
+    }
+    fetchData()
+  }, [])
 
   const filteredData = chartData.map(item => {
     const filteredItem: any = { date: item.date }
@@ -88,8 +88,7 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
   })
 
   const solidPct = 7 / (chartData.length - 1)
-  
-  // Dynamic ReferenceArea dates
+
   const forecastStartIndex = chartData.findIndex(item => item.total === null)
   const forecastStart = chartData[forecastStartIndex]?.date
   const forecastEnd = chartData[chartData.length - 1]?.date
