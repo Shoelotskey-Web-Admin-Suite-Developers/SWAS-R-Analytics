@@ -1693,3 +1693,193 @@ receipt_id,transaction_id,date_in,time_in,date_out,time_out,received_by,customer
 2025-005-SMGRA,20250815-SMG-005,15-08-2025,04:10,2025/08/16,04:10 PM,John D.,Pedro Santos,2,5,SM Grand Branch  ,SM Grand Central,700.0,350.0,350.0,Partial,,
 2025-006-SMGRA,20250815-SMG-006,15-08-2025,09:06,2025/08/16,02:06 AM,Liza M.,Pedro Santos,1,1,SM Grand Branch,SM Grand Central,421.28,210.64,210.64,Partial,,
 2025-007-SMGRND,20250815-SMG-007,15-08-2025,08:50,2025/08/16,11:50 PM,Liza M.,Anna Mae,4,1,SM Grand Branch,SM Grand Central,325.0,162.5,162.5,Partial,,
+2025-001,20250616-VAL-004,16-08-2025,5:19,6/27/2025,10:04 PM,Alex R.,Christine Joy,5,5,SM Grand Branch,SM Grand Central,163.08,881.89,162.5,Partial,Check packaging,3620
+2025-002,20250608-SMG-006,16-08-2025,0:46,6/7/2025,4:59 PM,John D.,Christine Joy,4,5,SM Grand Branch,Valenzuela City,369.92,736.21,259.82,Partial,Check packaging,8470
+2025-003,20250722-SMG-001,16-08-2025,3:51,8/3/2025,11:24 AM,Maria S.,Juan Dela Cruz,5,3,SM Grand Branch,Valenzuela City,25.65,639.42,373.17,Partial,Check packaging,7492
+2025-004,20250516-VAL-001,16-08-2025,1:04,6/23/2025,4:11 PM,Alex R.,Mark Anthony,3,2,SM Grand Branch,Valenzuela City,109.04,763.02,412.5,Partial,Check packaging,7404
+2025-005,20250531-SMV-004,16-08-2025,9:01,7/3/2025,11:01 AM,Liza M.,Anna Mae,4,3,SM Grand Branch,Valenzuela City,2362.31,329.77,259.64,Partial,Check packaging,3021
+2025-006,20250703-SMV-004,16-08-2025,1:19,7/6/2025,1:21 AM,Alex R.,Juan Dela Cruz,1,3,SM Grand Branch  ,SM Grand Central,1214.22,576.57,252.82,Partial,Check packaging,8339
+2025-007,20250717-SMV-001,16-08-2025,4:48,6/26/2025,5:19 PM,Liza M.,Mark Anthony,2,2,SM Grand Branch  ,SM Grand Central,2017.79,556.35,502.62,Partial,Check packaging,2545
+2025-008,20250608-VAL-002,16-08-2025,2:57,6/20/2025,10:46 AM,Alex R.,Christine Joy,4,0,SM Grand Branch  ,Valenzuela City,276.46,504.94,544.19,Partial,Check packaging,9195
+2025-009,20250522-SMV-003,16-08-2025,7:53,5/22/2025,4:55 AM,Alex R.,Anna Mae,2,2,SM Grand Branch  ,SM Grand Central,546.53,635.02,173.89,Partial,Check packaging,8387
+2025-010,20250622-VAL-005,16-08-2025,9:51,7/6/2025,9:48 PM,Alex R.,Juan Dela Cruz,1,2,VAL,Valenzuela City,104.02,423.88,387.27,Partial,Check packaging,5478
+2025-011,20250703-VAL-006,16-08-2025,0:10,8/16/2025,1:26 AM,John D.,Juan Dela Cruz,2,0,VAL,Valenzuela City,1749.19,165.63,192.66,Partial,Check packaging,4081
+2025-012,20250602-SMG-005,16-08-2025,3:28,6/29/2025,9:09 PM,John D.,Pedro Santos,1,1,VAL,Valenzuela City,342.41,774.99,328.33,Partial,Check packaging,2747
+2025-013,20250611-SMG-006,16-08-2025,7:43,5/18/2025,8:28 AM,Maria S.,Christine Joy,2,4,VAL,SM Grand Central,2482.38,295.34,598.5,Partial,Check packaging,6385
+2025-014,20250703-SMV-005,16-08-2025,9:40,6/7/2025,6:14 AM,John D.,Mark Anthony,4,0,VAL  ,Valenzuela City,490.95,274.39,1625,Partial,Check packaging,2689
+2025-015,20250521-SMV-004,16-08-2025,3:53,8/7/2025,4:04 PM,Alex R.,Pedro Santos,4,4,VAL  ,SM Grand Central,49.44,596.08,576.57,Partial,Check packaging,7341
+2025-016,20250607-SMV-003,16-08-2025,2:49,8/1/2025,12:34 AM,Alex R.,Christine Joy,5,3,VAL  ,Valenzuela City,275.17,304.94,432.85,Partial,Check packaging,3220
+2025-017,20250716-SMV-005,16-08-2025,0:34,7/14/2025,8:55 PM,Alex R.,Juan Dela Cruz,3,5,VAL  ,SM Grand Central,697.75,167.72,507.94,Partial,Check packaging,4057
+2025-018,20250527-SMV-002,16-08-2025,2:56,7/5/2025,12:53 PM,Alex R.,Pedro Santos,3,1,VAL  ,SM Grand Central,823.44,861.75,1300,Partial,Check packaging,3631
+2025-019,20250719-SMV-005,16-08-2025,2:45,8/7/2025,4:39 PM,Alex R.,Mark Anthony,2,0,VAL  ,SM Grand Central,1229.25,1120.62,601.31,Partial,Check packaging,1507
+2025-020,20250613-SMG-002,16-08-2025,3:34,5/19/2025,10:05 AM,Alex R.,Mark Anthony,2,3,Valenzuela Branch,SM Grand Central,2769.09,660.28,448.62,Partial,Check packaging,6242
+2025-021,20250515-SMV-007,16-08-2025,8:30,6/1/2025,6:33 AM,John D.,Mark Anthony,1,5,Valenzuela Branch,Valenzuela City,878.62,391.08,354.35,Partial,Check packaging,3631
+2025-022,20250629-SMG-003,16-08-2025,0:41,8/6/2025,8:56 PM,Alex R.,Mark Anthony,2,2,Valenzuela Branch,Valenzuela City,172.29,1120.62,404.95,Partial,Check packaging,7063
+2025-023,20250719-VAL-004,16-08-2025,4:22,7/14/2025,12:54 PM,John D.,Anna Mae,3,3,Valenzuela Branch  ,SM Grand Central,820.15,263.55,276.32,Partial,Check packaging,1069
+2025-024,20250517-SMV-005,16-08-2025,8:06,5/18/2025,2:49 PM,Liza M.,Pedro Santos,1,3,Valenzuela Branch  ,SM Grand Central,1025.76,890.55,268.05,Partial,Check packaging,7541
+2025-025,20250721-SMG-001,16-08-2025,5:28,6/23/2025,4:23 AM,Maria S.,Christine Joy,5,5,Valenzuela Branch  ,SM Grand Central,1808.04,464.55,434.51,Partial,Check packaging,7341
+2025-026,20250810-SMG-004,16-08-2025,7:28,5/21/2025,7:14 AM,Liza M.,Anna Mae,5,0,Valenzuela Branch  ,Valenzuela City,18.87,444.34,244.88,Partial,Check packaging,2598
+2025-027,20250718-SMV-003,16-08-2025,0:13,7/30/2025,6:09 PM,John D.,Pedro Santos,5,3,Valenzuela Branch  ,SM Grand Central,287.18,607.62,150.52,Partial,Check packaging,3685
+2025-028,20250814-VAL-002,17-08-2025,8:34,6/3/2025,3:13 PM,Alex R.,Christine Joy,2,1,SM Grand Branch,SM Grand Central,2081.23,637.5,214.02,Partial,Check packaging,7030
+2025-029,20250702-SMG-001,17-08-2025,1:44,6/27/2025,6:25 AM,Alex R.,Christine Joy,3,2,SM Grand Branch,SM Grand Central,1644.73,464.55,378.12,Partial,Check packaging,7178
+2025-030,20250516-VAL-002,17-08-2025,8:23,5/24/2025,9:27 AM,John D.,Anna Mae,5,4,SM Grand Branch,Valenzuela City,615.59,316.66,800,Partial,Check packaging,3631
+2025-031,20250702-VAL-001,17-08-2025,7:21,7/18/2025,10:31 AM,Alex R.,Pedro Santos,5,5,SM Grand Branch,SM Grand Central,374.45,640.94,425.41,Partial,Check packaging,7541
+2025-032,20250622-SMV-003,17-08-2025,6:32,7/26/2025,11:07 PM,Liza M.,Juan Dela Cruz,4,4,SM Grand Branch  ,Valenzuela City,101.13,223.22,278.47,Partial,Check packaging,5214
+2025-033,20250712-SMG-006,17-08-2025,2:39,7/25/2025,3:23 PM,Maria S.,Anna Mae,3,4,SM Grand Branch  ,Valenzuela City,1392.53,582.76,213.14,Partial,Check packaging,3599
+2025-034,20250604-SMG-001,17-08-2025,2:30,6/4/2025,7:26 PM,Maria S.,Mark Anthony,5,0,SM Grand Branch  ,SM Grand Central,109.68,504.56,862.5,Partial,Check packaging,7884
+2025-035,20250618-SMG-002,17-08-2025,7:17,6/3/2025,10:05 AM,Alex R.,Mark Anthony,5,1,SM Grand Branch  ,SM Grand Central,1740.22,843.39,444.34,Partial,Check packaging,2140
+2025-036,20250708-SMV-002,17-08-2025,6:20,6/11/2025,7:45 AM,Alex R.,Christine Joy,1,2,SM Grand Branch  ,SM Grand Central,305.44,535.76,390.2,Partial,Check packaging,5258
+2025-037,20250719-VAL-002,17-08-2025,3:22,7/18/2025,1:03 AM,Maria S.,Anna Mae,2,5,VAL,Valenzuela City,1465.88,769.57,270.28,Partial,Check packaging,2510
+2025-038,20250609-SMV-002,17-08-2025,1:17,5/24/2025,12:55 PM,Liza M.,Mark Anthony,4,1,VAL,SM Grand Central,752.2,875.7,742.38,Partial,Check packaging,7769
+2025-039,20250530-SMV-004,17-08-2025,6:46,7/29/2025,3:27 AM,Alex R.,Anna Mae,1,1,VAL,SM Grand Central,1170.7,627.01,500.72,Partial,Check packaging,8411
+2025-040,20250730-SMG-004,17-08-2025,9:48,8/15/2025,7:08 AM,Alex R.,Christine Joy,3,1,VAL,Valenzuela City,715.22,198.58,682.14,Partial,Check packaging,5753
+2025-041,20250708-VAL-001,17-08-2025,1:56,5/23/2025,9:34 AM,Alex R.,Anna Mae,5,5,VAL  ,SM Grand Central,28.15,480.21,430.29,Partial,Check packaging,6978
+2025-042,20250703-VAL-003,17-08-2025,4:14,6/2/2025,4:09 AM,Maria S.,Pedro Santos,1,2,VAL  ,SM Grand Central,322.28,546.84,467.57,Partial,Check packaging,9786
+2025-043,20250530-VAL-006,17-08-2025,2:41,6/18/2025,9:18 PM,Maria S.,Christine Joy,4,0,VAL  ,SM Grand Central,225.51,184.02,554.04,Partial,Check packaging,4081
+2025-044,20250624-VAL-005,17-08-2025,3:17,6/11/2025,3:03 PM,Alex R.,Christine Joy,1,5,VAL  ,Valenzuela City,63.49,843.39,270.28,Partial,Check packaging,8380
+2025-045,20250603-VAL-003,17-08-2025,8:42,8/18/2025,6:28 AM,Liza M.,Christine Joy,5,3,VAL  ,Valenzuela City,1096.97,133.83,503.19,Partial,Check packaging,7292
+2025-046,20250707-SMV-002,17-08-2025,1:09,8/1/2025,1:13 PM,John D.,Pedro Santos,4,0,VAL  ,Valenzuela City,1789.6,402.41,875,Partial,Check packaging,7442
+2025-047,20250622-VAL-002,17-08-2025,6:40,8/13/2025,8:35 PM,Maria S.,Anna Mae,2,5,Valenzuela Branch,SM Grand Central,3221.17,508.09,1500,Partial,Check packaging,5208
+2025-048,20250728-VAL-001,17-08-2025,4:09,6/8/2025,4:03 AM,Liza M.,Pedro Santos,3,0,Valenzuela Branch,SM Grand Central,1246.79,245.53,302.72,Partial,Check packaging,7273
+2025-049,20250809-VAL-005,17-08-2025,6:54,6/1/2025,6:34 AM,Liza M.,Anna Mae,2,3,Valenzuela Branch,Valenzuela City,196.04,287.64,210.64,Partial,Check packaging,2926
+2025-050,20250810-SMG-001,17-08-2025,4:38,6/9/2025,12:39 AM,John D.,Mark Anthony,4,2,Valenzuela Branch  ,SM Grand Central,270.12,596.08,350,Partial,Check packaging,8971
+2025-051,20250613-VAL-003,17-08-2025,7:28,6/16/2025,8:43 PM,Alex R.,Mark Anthony,4,4,Valenzuela Branch  ,SM Grand Central,323.79,774.99,700.44,Partial,Check packaging,6840
+2025-052,20250525-SMV-007,17-08-2025,9:00,7/29/2025,5:59 PM,Maria S.,Juan Dela Cruz,3,2,Valenzuela Branch  ,Valenzuela City,2507.09,259.19,156.9,Partial,Check packaging,3816
+2025-053,20250804-VAL-007,18-08-2025,0:17,8/17/2025,11:13 PM,Alex R.,Christine Joy,3,1,SM Grand Branch,Valenzuela City,374.62,229.52,535.76,Partial,Check packaging,7063
+2025-054,20250715-SMV-005,18-08-2025,2:47,5/18/2025,2:31 AM,Alex R.,Mark Anthony,3,4,SM Grand Branch,SM Grand Central,1490.08,221.74,207.24,Partial,Check packaging,8569
+2025-055,20250612-SMG-001,18-08-2025,9:42,5/31/2025,6:18 AM,Liza M.,Anna Mae,5,1,SM Grand Branch,Valenzuela City,1065.36,687.5,211.18,Partial,Check packaging,4675
+2025-056,20250810-VAL-006,18-08-2025,9:16,7/3/2025,12:57 AM,Alex R.,Pedro Santos,2,1,SM Grand Branch,SM Grand Central,734.95,719.43,756.93,Partial,Check packaging,4937
+2025-057,20250620-SMG-002,18-08-2025,4:10,8/5/2025,6:28 PM,Liza M.,Juan Dela Cruz,1,0,SM Grand Branch,Valenzuela City,1287.99,804.39,108.29,Partial,Check packaging,4603
+2025-058,20250611-SMG-007,18-08-2025,7:17,6/27/2025,1:50 AM,John D.,Anna Mae,1,5,SM Grand Branch  ,SM Grand Central,1015.82,133.83,900.52,Partial,Check packaging,3599
+2025-059,20250705-SMG-005,18-08-2025,4:22,7/25/2025,11:32 AM,Liza M.,Mark Anthony,2,5,SM Grand Branch  ,Valenzuela City,595.55,322.23,613.2,Partial,Check packaging,1950
+2025-060,20250530-SMV-003,18-08-2025,0:21,7/30/2025,11:04 PM,Alex R.,Juan Dela Cruz,2,4,SM Grand Branch  ,SM Grand Central,154.1,509.86,455.76,Partial,Check packaging,9488
+2025-061,20250515-SMG-001,18-08-2025,0:31,7/19/2025,10:54 AM,Liza M.,Christine Joy,2,1,SM Grand Branch  ,Valenzuela City,788.38,890.55,599.87,Partial,Check packaging,5812
+2025-062,20250528-SMV-004,18-08-2025,7:58,8/1/2025,2:42 PM,Alex R.,Christine Joy,3,2,SM Grand Branch  ,Valenzuela City,1881.15,357.31,250.55,Partial,Check packaging,5753
+2025-063,20250530-SMV-006,18-08-2025,4:59,7/4/2025,5:19 AM,Maria S.,Pedro Santos,5,4,VAL,Valenzuela City,80.98,149.77,1400,Partial,Check packaging,1767
+2025-064,20250706-SMV-006,18-08-2025,1:55,7/30/2025,4:08 PM,Maria S.,Anna Mae,4,3,VAL,Valenzuela City,321.42,212.71,434.51,Partial,Check packaging,8306
+2025-065,20250519-VAL-003,18-08-2025,8:35,6/12/2025,1:43 AM,John D.,Pedro Santos,2,2,VAL,Valenzuela City,1743.87,343.1,587.5,Partial,Check packaging,8783
+2025-066,20250711-VAL-005,18-08-2025,1:28,6/27/2025,8:59 AM,Alex R.,Mark Anthony,1,4,VAL,SM Grand Central,45.02,253.34,1875,Partial,Check packaging,9732
+2025-067,20250707-SMV-002,18-08-2025,4:07,5/24/2025,11:44 PM,Liza M.,Christine Joy,1,5,VAL,Valenzuela City,830.71,1009.11,177.85,Partial,Check packaging,4953
+2025-068,20250804-VAL-003,18-08-2025,8:32,6/22/2025,2:06 AM,John D.,Pedro Santos,3,2,VAL  ,SM Grand Central,425.58,502.62,1254.55,Partial,Check packaging,7210
+2025-069,20250812-SMV-001,18-08-2025,8:37,7/7/2025,9:04 AM,John D.,Christine Joy,1,0,VAL  ,SM Grand Central,1035.9,378.02,726.46,Partial,Check packaging,3685
+2025-070,20250701-SMV-002,18-08-2025,0:57,8/2/2025,11:28 AM,John D.,Anna Mae,3,2,VAL  ,SM Grand Central,445.38,393.97,824.92,Partial,Check packaging,5045
+2025-071,20250730-SMV-005,18-08-2025,1:12,5/26/2025,10:57 AM,Alex R.,Juan Dela Cruz,1,2,VAL  ,Valenzuela City,305.02,259.64,463.95,Partial,Check packaging,2790
+2025-072,20250607-SMV-005,18-08-2025,6:27,7/2/2025,1:14 PM,John D.,Mark Anthony,3,5,VAL  ,SM Grand Central,1031.27,238.36,428.32,Partial,Check packaging,4117
+2025-073,20250814-SMG-005,18-08-2025,1:09,7/17/2025,9:15 PM,John D.,Mark Anthony,5,2,VAL  ,SM Grand Central,1379.85,276.32,274.39,Partial,Check packaging,8634
+2025-074,20250613-SMV-005,18-08-2025,6:30,6/23/2025,6:22 AM,John D.,Anna Mae,3,2,Valenzuela Branch,SM Grand Central,676.38,156.9,194.25,Partial,Check packaging,6115
+2025-075,20250713-VAL-004,18-08-2025,1:36,8/3/2025,7:04 PM,Maria S.,Anna Mae,4,2,Valenzuela Branch,Valenzuela City,90.1,508.09,276.21,Partial,Check packaging,4127
+2025-076,20250522-SMV-004,18-08-2025,0:47,5/25/2025,11:11 AM,Maria S.,Pedro Santos,4,5,Valenzuela Branch,Valenzuela City,2639.45,682.14,244.88,Partial,Check packaging,3235
+2025-077,20250610-SMV-004,18-08-2025,0:21,7/29/2025,8:32 AM,Alex R.,Pedro Santos,1,0,Valenzuela Branch,SM Grand Central,1284.51,254.71,177.85,Partial,Check packaging,8227
+2025-078,20250706-VAL-004,18-08-2025,0:09,5/23/2025,6:41 PM,Maria S.,Pedro Santos,4,5,Valenzuela Branch,SM Grand Central,279.56,357.31,245.53,Partial,Check packaging,4810
+2025-079,20250718-SMG-001,18-08-2025,5:10,7/22/2025,10:38 PM,Maria S.,Anna Mae,3,5,Valenzuela Branch  ,Valenzuela City,511.85,699.86,213.5,Partial,Check packaging,4571
+2025-080,20250722-VAL-004,18-08-2025,0:25,7/25/2025,12:13 AM,Alex R.,Anna Mae,1,3,Valenzuela Branch  ,SM Grand Central,1056.73,632.93,562.5,Partial,Check packaging,4372
+2025-081,20250614-SMG-006,18-08-2025,2:45,6/6/2025,7:16 PM,Maria S.,Juan Dela Cruz,5,5,Valenzuela Branch  ,Valenzuela City,394.26,655.02,505.65,Partial,Check packaging,7842
+2025-082,20250808-VAL-005,18-08-2025,2:44,6/17/2025,2:22 AM,Maria S.,Pedro Santos,2,0,Valenzuela Branch  ,Valenzuela City,391.16,179.97,294,Partial,Check packaging,7951
+2025-083,20250713-VAL-002,18-08-2025,8:43,7/21/2025,11:58 PM,Liza M.,Juan Dela Cruz,1,5,Valenzuela Branch  ,SM Grand Central,416.14,628.83,217.79,Partial,Check packaging,9991
+2025-084,20250708-VAL-002,18-08-2025,2:47,6/14/2025,3:05 AM,Maria S.,Pedro Santos,2,0,Valenzuela Branch  ,SM Grand Central,884.86,137.81,507.94,Partial,Check packaging,7837
+2025-085,20250524-SMV-005,19-08-2025,7:23,5/25/2025,7:21 PM,Liza M.,Mark Anthony,4,5,SM Grand Branch,Valenzuela City,249.94,250.54,383.2,Partial,Check packaging,9221
+2025-086,20250515-SMV-007,19-08-2025,4:01,7/4/2025,7:03 PM,Liza M.,Anna Mae,4,4,SM Grand Branch,Valenzuela City,57.98,636.41,396.22,Partial,Check packaging,1745
+2025-087,20250520-SMG-004,19-08-2025,2:32,5/17/2025,2:11 PM,Liza M.,Pedro Santos,3,3,SM Grand Branch,SM Grand Central,2177.92,560.44,265.63,Partial,Check packaging,2794
+2025-088,20250731-SMG-006,19-08-2025,5:58,7/22/2025,7:56 AM,Liza M.,Christine Joy,4,2,SM Grand Branch,SM Grand Central,621.66,507.94,393.97,Partial,Check packaging,3816
+2025-089,20250719-SMV-002,19-08-2025,5:44,7/6/2025,7:03 PM,Maria S.,Juan Dela Cruz,2,0,SM Grand Branch,Valenzuela City,96.5,576.57,192.66,Partial,Check packaging,3103
+2025-090,20250609-VAL-002,19-08-2025,6:56,7/9/2025,5:46 PM,John D.,Pedro Santos,5,5,SM Grand Branch  ,SM Grand Central,478.26,1117.27,249.36,Partial,Check packaging,2818
+2025-091,20250810-SMG-001,19-08-2025,5:51,7/2/2025,9:23 AM,Liza M.,Pedro Santos,3,0,SM Grand Branch  ,SM Grand Central,2670.39,315.76,718.8,Partial,Check packaging,5340
+2025-092,20250614-VAL-006,19-08-2025,6:54,7/23/2025,5:11 PM,Alex R.,Christine Joy,2,3,SM Grand Branch  ,Valenzuela City,81.83,113.08,259.64,Partial,Check packaging,9182
+2025-093,20250629-SMV-002,19-08-2025,8:56,8/9/2025,9:52 AM,Liza M.,Anna Mae,2,4,SM Grand Branch  ,SM Grand Central,205.52,824.69,448.13,Partial,Check packaging,2038
+2025-094,20250815-SMG-007,19-08-2025,6:11,5/22/2025,5:23 AM,Alex R.,Pedro Santos,2,4,VAL,SM Grand Central,262,1250,315.09,Partial,Check packaging,8783
+2025-095,20250803-SMV-001,19-08-2025,6:26,5/23/2025,2:51 AM,Maria S.,Pedro Santos,3,5,VAL,Valenzuela City,114.37,246.77,766.12,Partial,Check packaging,1689
+2025-096,20250516-VAL-001,19-08-2025,4:44,5/21/2025,4:04 PM,John D.,Juan Dela Cruz,2,0,VAL,SM Grand Central,1389.92,766.12,305.77,Partial,Check packaging,4441
+2025-097,20250628-SMG-002,19-08-2025,1:02,6/8/2025,8:25 PM,Alex R.,Juan Dela Cruz,3,3,VAL,Valenzuela City,94.36,540.96,515.95,Partial,Check packaging,1767
+2025-098,20250803-SMV-002,19-08-2025,9:04,5/23/2025,9:28 PM,Alex R.,Christine Joy,1,2,VAL,SM Grand Central,1829.35,193.14,412.5,Partial,Check packaging,5812
+2025-099,20250615-VAL-001,19-08-2025,2:23,6/28/2025,3:06 AM,Maria S.,Juan Dela Cruz,3,2,VAL  ,SM Grand Central,1789.45,1016.22,482.66,Partial,Check packaging,9470
+2025-100,20250622-VAL-002,19-08-2025,1:35,5/22/2025,7:33 AM,Maria S.,Christine Joy,2,1,VAL  ,SM Grand Central,441.46,411.05,214.02,Partial,Check packaging,7273
+2025-101,20250606-SMV-004,19-08-2025,8:14,5/29/2025,6:20 AM,John D.,Pedro Santos,3,3,VAL  ,Valenzuela City,811.09,250.55,639.42,Partial,Check packaging,5634
+2025-102,20250810-SMV-004,19-08-2025,7:05,7/6/2025,12:09 PM,John D.,Christine Joy,3,1,Valenzuela Branch,SM Grand Central,1445.03,507.89,543.67,Partial,Check packaging,8387
+2025-103,20250610-VAL-001,19-08-2025,2:14,7/15/2025,2:21 AM,Alex R.,Anna Mae,1,4,Valenzuela Branch,Valenzuela City,277.02,402.31,1600,Partial,Check packaging,7210
+2025-104,20250704-SMV-002,19-08-2025,9:33,8/2/2025,5:29 AM,Liza M.,Anna Mae,3,1,Valenzuela Branch,Valenzuela City,2600.95,976.53,527.23,Partial,Check packaging,5812
+2025-105,20250616-SMG-005,19-08-2025,2:50,8/4/2025,9:18 AM,Maria S.,Juan Dela Cruz,5,2,Valenzuela Branch  ,SM Grand Central,2384.37,687.36,542,Partial,Check packaging,4471
+2025-106,20250622-VAL-005,19-08-2025,1:13,5/20/2025,5:32 PM,Maria S.,Mark Anthony,4,4,Valenzuela Branch  ,Valenzuela City,74.36,900.52,726.46,Partial,Check packaging,8783
+2025-107,20250726-SMV-003,19-08-2025,6:36,8/14/2025,11:33 PM,John D.,Juan Dela Cruz,3,2,Valenzuela Branch  ,Valenzuela City,714.46,544.19,172.76,Partial,Check packaging,1609
+2025-108,20250612-VAL-006,19-08-2025,7:03,8/18/2025,11:10 AM,Liza M.,Juan Dela Cruz,4,3,Valenzuela Branch  ,Valenzuela City,64.82,396.22,245.53,Partial,Check packaging,9725
+2025-109,20250720-SMV-003,19-08-2025,8:29,7/22/2025,6:05 AM,John D.,Pedro Santos,5,5,Valenzuela Branch  ,SM Grand Central,1083.99,527.32,596.08,Partial,Check packaging,5965
+2025-110,20250802-SMV-006,20-08-2025,3:11,5/15/2025,8:23 AM,Liza M.,Mark Anthony,1,1,SM Grand Branch,Valenzuela City,1177.1,736.21,162.5,Partial,Check packaging,1737
+2025-111,20250522-SMG-001,20-08-2025,7:04,5/19/2025,1:50 PM,Alex R.,Christine Joy,2,4,SM Grand Branch,SM Grand Central,1850.47,210.64,194.07,Partial,Check packaging,6321
+2025-112,20250726-VAL-005,20-08-2025,4:19,6/16/2025,5:32 PM,John D.,Juan Dela Cruz,1,2,SM Grand Branch,Valenzuela City,347.5,1375,222.87,Partial,Check packaging,9401
+2025-113,20250617-SMV-001,20-08-2025,3:10,5/20/2025,1:15 AM,John D.,Christine Joy,3,2,SM Grand Branch,SM Grand Central,520.93,201.68,204.72,Partial,Check packaging,8306
+2025-114,20250714-SMV-004,20-08-2025,7:44,7/9/2025,1:26 PM,Alex R.,Mark Anthony,5,3,SM Grand Branch  ,Valenzuela City,164.48,393.91,383.2,Partial,Check packaging,6385
+2025-115,20250525-SMV-004,20-08-2025,8:06,7/6/2025,6:37 PM,Liza M.,Anna Mae,5,4,SM Grand Branch  ,SM Grand Central,350.17,295.47,872.73,Partial,Check packaging,7669
+2025-116,20250808-SMV-005,20-08-2025,8:13,7/1/2025,12:31 AM,Liza M.,Pedro Santos,2,3,SM Grand Branch  ,SM Grand Central,966.8,1254.55,223.51,Partial,Check packaging,5692
+2025-117,20250718-SMG-003,20-08-2025,8:29,7/18/2025,6:30 AM,Maria S.,Pedro Santos,3,0,SM Grand Branch  ,Valenzuela City,1055.08,173.81,245.61,Partial,Check packaging,9732
+2025-118,20250515-SMG-001,20-08-2025,4:45,5/16/2025,7:46 PM,Maria S.,Christine Joy,1,3,SM Grand Branch  ,SM Grand Central,1528.47,699.86,900,Partial,Check packaging,8937
+2025-119,20250721-SMG-003,20-08-2025,5:53,7/24/2025,5:51 AM,Liza M.,Anna Mae,3,1,VAL,Valenzuela City,2752.41,293.02,173.77,Partial,Check packaging,1192
+2025-120,20250713-SMG-002,20-08-2025,7:39,7/9/2025,10:38 PM,Maria S.,Juan Dela Cruz,4,3,VAL,Valenzuela City,425.01,544.19,715.38,Partial,Check packaging,1950
+2025-121,20250721-SMV-001,20-08-2025,8:14,7/28/2025,5:59 PM,John D.,Juan Dela Cruz,5,2,VAL,Valenzuela City,1411.72,640.69,108.29,Partial,Check packaging,7273
+2025-122,20250610-SMV-001,20-08-2025,0:28,8/11/2025,1:28 AM,John D.,Christine Joy,4,1,VAL,SM Grand Central,116.86,321.55,210.64,Partial,Check packaging,5478
+2025-123,20250613-VAL-002,20-08-2025,5:40,5/28/2025,3:53 PM,Alex R.,Mark Anthony,3,0,VAL  ,Valenzuela City,1684.04,932.35,315.09,Partial,Check packaging,9278
+2025-124,20250607-SMG-001,20-08-2025,6:43,6/17/2025,9:40 PM,Alex R.,Christine Joy,3,4,VAL  ,Valenzuela City,1257.77,450,328.93,Partial,Check packaging,7505
+2025-125,20250727-SMG-006,20-08-2025,9:11,8/4/2025,10:05 AM,Liza M.,Juan Dela Cruz,3,3,VAL  ,Valenzuela City,144.19,150.52,328.54,Partial,Check packaging,3621
+2025-126,20250723-SMV-004,20-08-2025,3:33,7/12/2025,9:52 AM,Liza M.,Christine Joy,2,3,Valenzuela Branch,SM Grand Central,702.29,350.88,908.25,Partial,Check packaging,9879
+2025-127,20250608-SMV-002,20-08-2025,0:33,8/15/2025,3:22 AM,Maria S.,Anna Mae,4,1,Valenzuela Branch,Valenzuela City,873.58,214.02,425.41,Partial,Check packaging,4441
+2025-128,20250815-SMG-006,20-08-2025,6:36,7/21/2025,5:52 PM,Liza M.,Pedro Santos,3,1,Valenzuela Branch,SM Grand Central,511.66,162.5,321.79,Partial,Check packaging,4988
+2025-129,20250810-SMG-003,20-08-2025,3:17,8/18/2025,4:44 PM,Liza M.,Juan Dela Cruz,5,0,Valenzuela Branch,SM Grand Central,2586.47,295.29,281.05,Partial,Check packaging,4036
+2025-130,20250519-VAL-003,20-08-2025,4:10,8/13/2025,11:35 AM,Maria S.,Pedro Santos,5,0,Valenzuela Branch  ,SM Grand Central,127.97,217.36,530.48,Partial,Check packaging,8858
+2025-131,20250815-SMG-003,20-08-2025,9:08,8/17/2025,9:39 PM,Alex R.,Christine Joy,1,3,Valenzuela Branch  ,SM Grand Central,1201.29,123.25,736.21,Partial,Check packaging,3477
+2025-132,20250707-SMG-001,20-08-2025,1:54,5/29/2025,9:40 PM,Alex R.,Juan Dela Cruz,4,0,Valenzuela Branch  ,Valenzuela City,709.15,448.62,1013.11,Partial,Check packaging,4614
+2025-133,20250523-SMG-006,20-08-2025,8:56,7/21/2025,10:45 AM,Maria S.,Christine Joy,1,0,Valenzuela Branch  ,SM Grand Central,1122.59,1150.18,148,Partial,Check packaging,5478
+2025-134,20250802-VAL-002,21-08-2025,8:22,7/30/2025,12:30 AM,Maria S.,Pedro Santos,4,3,SM Grand Branch,SM Grand Central,2620.37,350,267.35,Partial,Check packaging,6242
+2025-135,20250611-VAL-001,21-08-2025,7:42,7/30/2025,6:54 AM,John D.,Juan Dela Cruz,1,4,SM Grand Branch,SM Grand Central,117.95,238.36,719.65,Partial,Check packaging,4853
+2025-136,20250814-SMV-006,21-08-2025,4:54,7/14/2025,1:25 AM,Maria S.,Anna Mae,5,3,SM Grand Branch,Valenzuela City,543.58,293.45,217.79,Partial,Check packaging,9766
+2025-137,20250620-SMG-006,21-08-2025,2:06,8/6/2025,1:53 AM,Alex R.,Juan Dela Cruz,5,1,SM Grand Branch,Valenzuela City,833.4,185.09,259.64,Partial,Check packaging,8752
+2025-138,20250520-VAL-007,21-08-2025,6:46,7/31/2025,5:34 AM,Alex R.,Pedro Santos,5,4,SM Grand Branch,SM Grand Central,48.7,774.02,1625,Partial,Check packaging,4081
+2025-139,20250811-VAL-006,21-08-2025,8:22,8/14/2025,12:31 PM,John D.,Pedro Santos,1,5,SM Grand Branch  ,Valenzuela City,1352.42,351.17,480.36,Partial,Check packaging,6825
+2025-140,20250803-SMV-004,21-08-2025,5:22,6/13/2025,5:45 AM,John D.,Mark Anthony,3,5,SM Grand Branch  ,Valenzuela City,1419.54,192.38,832.88,Partial,Check packaging,5092
+2025-141,20250711-SMG-006,21-08-2025,4:18,7/12/2025,9:38 PM,John D.,Juan Dela Cruz,1,5,SM Grand Branch  ,SM Grand Central,457.04,900.52,295.9,Partial,Check packaging,8424
+2025-142,20250604-VAL-007,21-08-2025,1:24,6/28/2025,7:37 AM,Maria S.,Juan Dela Cruz,2,2,VAL,Valenzuela City,58.83,717.73,1375,Partial,Check packaging,3610
+2025-143,20250814-SMV-003,21-08-2025,7:49,5/28/2025,3:24 AM,John D.,Mark Anthony,1,0,VAL,Valenzuela City,212.13,1044.87,224.48,Partial,Check packaging,7505
+2025-144,20250713-SMV-001,21-08-2025,1:43,6/23/2025,4:13 AM,Maria S.,Mark Anthony,3,3,VAL,SM Grand Central,73.44,736.21,687.5,Partial,Check packaging,5098
+2025-145,20250809-VAL-002,21-08-2025,7:27,7/29/2025,7:23 AM,Liza M.,Pedro Santos,4,0,VAL,Valenzuela City,2189.63,476.19,546.4,Partial,Check packaging,4126
+2025-146,20250709-VAL-004,21-08-2025,6:50,6/3/2025,3:09 PM,Alex R.,Mark Anthony,4,4,VAL,SM Grand Central,1277.53,331.05,400.24,Partial,Check packaging,1247
+2025-147,20250811-VAL-005,21-08-2025,3:51,6/27/2025,10:58 PM,John D.,Pedro Santos,2,4,VAL,Valenzuela City,451.44,251.95,536.02,Partial,Check packaging,8629
+2025-148,20250710-SMG-002,21-08-2025,0:45,8/5/2025,4:50 AM,Liza M.,Anna Mae,5,0,VAL  ,Valenzuela City,686.57,257.92,256.49,Partial,Check packaging,7945
+2025-149,20250722-SMG-001,21-08-2025,3:29,8/5/2025,4:54 AM,Liza M.,Pedro Santos,2,4,VAL  ,SM Grand Central,2391.63,315.76,976.53,Partial,Check packaging,5576
+2025-150,20250603-SMG-004,21-08-2025,9:19,5/25/2025,8:00 PM,Maria S.,Juan Dela Cruz,5,0,VAL  ,SM Grand Central,4.25,294,223.64,Partial,Check packaging,5890
+2025-151,20250703-SMG-001,21-08-2025,9:45,7/31/2025,7:32 PM,John D.,Anna Mae,5,4,VAL  ,Valenzuela City,195.55,1038.02,976.53,Partial,Check packaging,7841
+2025-152,20250604-VAL-002,21-08-2025,3:35,6/7/2025,1:44 PM,John D.,Anna Mae,1,4,Valenzuela Branch,SM Grand Central,499.7,822.16,756.93,Partial,Check packaging,4749
+2025-153,20250621-VAL-004,21-08-2025,6:01,6/13/2025,6:55 PM,Alex R.,Anna Mae,2,4,Valenzuela Branch,Valenzuela City,73.49,517.39,170.35,Partial,Check packaging,6321
+2025-154,20250611-SMG-006,21-08-2025,4:15,7/24/2025,8:51 AM,Liza M.,Juan Dela Cruz,1,0,Valenzuela Branch,SM Grand Central,824.63,383.47,314.94,Partial,Check packaging,2284
+2025-155,20250802-SMV-006,21-08-2025,3:53,8/5/2025,1:24 PM,Maria S.,Christine Joy,1,2,Valenzuela Branch,SM Grand Central,3311.18,735.06,369.32,Partial,Check packaging,2936
+2025-156,20250704-SMG-002,21-08-2025,0:38,7/16/2025,3:12 PM,Alex R.,Pedro Santos,2,0,Valenzuela Branch  ,SM Grand Central,593.85,227.28,274.39,Partial,Check packaging,9298
+2025-157,20250714-SMG-004,21-08-2025,6:52,6/14/2025,11:54 PM,Alex R.,Christine Joy,3,1,Valenzuela Branch  ,Valenzuela City,312.53,826.71,503.19,Partial,Check packaging,8380
+2025-158,20250716-SMG-005,21-08-2025,1:08,5/21/2025,11:56 PM,Liza M.,Anna Mae,2,0,Valenzuela Branch  ,Valenzuela City,660.27,305.77,246.77,Partial,Check packaging,6210
+2025-159,20250715-SMV-005,21-08-2025,3:33,7/4/2025,9:26 AM,Maria S.,Mark Anthony,2,0,Valenzuela Branch  ,Valenzuela City,264.59,168.88,480.21,Partial,Check packaging,4355
+2025-160,20250706-SMG-005,21-08-2025,3:22,7/19/2025,5:23 PM,Liza M.,Pedro Santos,3,3,Valenzuela Branch  ,SM Grand Central,1677.75,843.39,304.94,Partial,Check packaging,8387
+2025-161,20250808-VAL-001,21-08-2025,8:55,6/7/2025,12:34 PM,Liza M.,Mark Anthony,5,5,Valenzuela Branch  ,Valenzuela City,111.01,213.75,359.96,Partial,Check packaging,4937
+2025-162,20250725-VAL-001,22-08-2025,2:46,8/10/2025,8:31 PM,Liza M.,Anna Mae,3,3,SM Grand Branch,SM Grand Central,634.53,194.25,213.75,Partial,Check packaging,7292
+2025-163,20250518-SMV-003,22-08-2025,1:22,5/17/2025,9:49 AM,John D.,Mark Anthony,3,4,SM Grand Branch,Valenzuela City,184.89,355.35,237.5,Partial,Check packaging,6556
+2025-164,20250731-VAL-005,22-08-2025,9:32,7/5/2025,2:25 PM,Alex R.,Pedro Santos,4,4,SM Grand Branch,SM Grand Central,125.29,314.03,632.69,Partial,Check packaging,8387
+2025-165,20250721-SMV-003,22-08-2025,0:37,7/23/2025,3:13 AM,Alex R.,Mark Anthony,3,5,SM Grand Branch,Valenzuela City,602.73,237.5,430.29,Partial,Check packaging,6250
+2025-166,20250602-SMV-003,22-08-2025,4:40,5/25/2025,10:04 AM,Alex R.,Christine Joy,5,5,SM Grand Branch,SM Grand Central,1430.42,387.63,430.29,Partial,Check packaging,3351
+2025-167,20250523-SMV-001,22-08-2025,2:33,7/5/2025,7:23 AM,Maria S.,Mark Anthony,2,2,SM Grand Branch,Valenzuela City,136.14,123.25,799.05,Partial,Check packaging,6898
+2025-168,20250805-SMV-004,22-08-2025,3:32,5/15/2025,3:17 PM,Alex R.,Juan Dela Cruz,5,4,SM Grand Branch  ,Valenzuela City,497.03,800,435.96,Partial,Check packaging,7210
+2025-169,20250726-VAL-004,22-08-2025,3:43,8/6/2025,6:27 AM,Maria S.,Mark Anthony,5,0,SM Grand Branch  ,Valenzuela City,530.08,826.71,507.89,Partial,Check packaging,5646
+2025-170,20250627-SMV-003,22-08-2025,4:26,7/23/2025,4:34 AM,Maria S.,Juan Dela Cruz,2,3,SM Grand Branch  ,Valenzuela City,1421.11,387.27,719.65,Partial,Check packaging,5208
+2025-171,20250610-SMV-006,22-08-2025,9:32,5/28/2025,10:00 AM,John D.,Juan Dela Cruz,2,0,SM Grand Branch  ,SM Grand Central,1687.72,211.18,743.23,Partial,Check packaging,1935
+2025-172,20250523-VAL-003,22-08-2025,5:11,8/15/2025,5:44 AM,John D.,Christine Joy,1,3,SM Grand Branch  ,SM Grand Central,736.06,590.36,773.76,Partial,Check packaging,7442
+2025-173,20250729-SMV-001,22-08-2025,7:38,8/6/2025,12:01 PM,John D.,Pedro Santos,5,4,VAL,Valenzuela City,1092.99,831.73,379.93,Partial,Check packaging,9368
+2025-174,20250720-SMG-006,22-08-2025,3:43,7/18/2025,2:16 AM,John D.,Mark Anthony,2,4,VAL,Valenzuela City,86.84,193.14,619.16,Partial,Check packaging,4853
+2025-175,20250605-VAL-005,22-08-2025,3:34,7/26/2025,5:06 PM,John D.,Juan Dela Cruz,3,1,VAL,SM Grand Central,160.15,408.28,660.41,Partial,Check packaging,5299
+2025-176,20250609-SMG-003,22-08-2025,0:45,8/1/2025,4:36 AM,Alex R.,Mark Anthony,5,4,VAL,Valenzuela City,479.23,568.65,718.8,Partial,Check packaging,4748
+2025-177,20250526-VAL-004,22-08-2025,8:47,6/22/2025,11:29 AM,Liza M.,Christine Joy,2,0,VAL,SM Grand Central,2733.79,542,400.24,Partial,Check packaging,1229
+2025-178,20250728-SMV-004,22-08-2025,0:38,7/17/2025,2:15 PM,John D.,Anna Mae,4,0,VAL  ,SM Grand Central,2430.59,445.84,402.31,Partial,Check packaging,7842
+2025-179,20250712-SMV-004,22-08-2025,6:46,7/18/2025,11:19 PM,Liza M.,Christine Joy,3,3,VAL  ,SM Grand Central,2168.45,742.38,314.03,Partial,Check packaging,7292
+2025-180,20250723-SMG-005,22-08-2025,1:04,7/8/2025,10:38 AM,Liza M.,Mark Anthony,5,4,VAL  ,Valenzuela City,391.96,155.49,800,Partial,Check packaging,5092
+2025-181,20250711-SMV-005,22-08-2025,4:17,6/9/2025,11:03 PM,Maria S.,Pedro Santos,1,3,Valenzuela Branch,SM Grand Central,1965.02,613.2,614.23,Partial,Check packaging,1540
+2025-182,20250704-SMG-007,22-08-2025,8:27,7/29/2025,12:51 AM,John D.,Mark Anthony,2,1,Valenzuela Branch,SM Grand Central,492.52,337.43,328.33,Partial,Check packaging,6115
+2025-183,20250802-VAL-005,22-08-2025,2:25,7/24/2025,3:15 PM,Liza M.,Anna Mae,5,2,Valenzuela Branch,Valenzuela City,1674.43,397.92,187.87,Partial,Check packaging,5098
+2025-184,20250815-SMG-002,22-08-2025,3:53,8/2/2025,2:20 PM,John D.,Pedro Santos,1,3,Valenzuela Branch,Valenzuela City,218.03,338.69,434.51,Partial,Check packaging,4372
+2025-185,20250707-VAL-004,22-08-2025,4:57,8/7/2025,4:47 AM,John D.,Mark Anthony,5,2,Valenzuela Branch  ,SM Grand Central,251.11,902.87,536.02,Partial,Check packaging,9188
+2025-186,20250726-SMV-005,22-08-2025,3:43,8/9/2025,4:52 AM,Liza M.,Pedro Santos,3,1,Valenzuela Branch  ,SM Grand Central,1497.18,578.25,169.81,Partial,Check packaging,8783
+2025-187,20250721-SMG-004,22-08-2025,4:21,8/10/2025,4:57 PM,Liza M.,Juan Dela Cruz,5,5,Valenzuela Branch  ,Valenzuela City,263.44,826.71,502.62,Partial,Check packaging,5486
+2025-188,20250604-SMV-001,22-08-2025,5:14,5/28/2025,1:41 AM,Maria S.,Pedro Santos,5,3,Valenzuela Branch  ,SM Grand Central,397.03,426.66,390.2,Partial,Check packaging,5486
+2025-189,20250804-VAL-003,22-08-2025,9:33,8/12/2025,2:23 AM,John D.,Juan Dela Cruz,4,4,Valenzuela Branch  ,Valenzuela City,1315.84,925,418.49,Partial,Check packaging,2794
+2025-190,20250621-VAL-003,22-08-2025,6:05,8/14/2025,3:06 AM,Maria S.,Christine Joy,3,3,Valenzuela Branch  ,Valenzuela City,312.4,337.51,111.26,Partial,Check packaging,6299

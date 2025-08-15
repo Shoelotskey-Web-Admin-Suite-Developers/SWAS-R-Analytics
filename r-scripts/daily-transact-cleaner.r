@@ -9,7 +9,10 @@ cleaned_data <- raw_data %>%
   mutate(across(where(is.character), ~ str_trim(.))) %>%
   
   # Convert date_in to MM/DD/YY
-  mutate(date_in_fmt = format(as.Date(date_in, format = "%d-%m-%Y"), "%m/%d/%Y")) %>%
+  mutate(date_in_fmt = coalesce(
+  format(as.Date(date_in, format = "%d-%m-%Y"), "%m/%d/%Y"),
+  format(as.Date(date_in, format = "%d/%m/%Y"), "%m/%d/%Y")
+)) %>%
   
   # Format time_in as HH:MM then strip leading zero
   mutate(time_in_fmt = format(strptime(time_in, format = "%H:%M:%S"), "%H:%M"),
