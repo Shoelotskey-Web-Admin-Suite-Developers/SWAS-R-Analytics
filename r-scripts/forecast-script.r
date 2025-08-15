@@ -1,8 +1,8 @@
 library(dplyr)
 library(lubridate)
-library(forecast)
-library(jsonlite)
 library(tidyr)
+library(jsonlite)
+library(prophet)  # <-- Prophet library
 
 # --- 1. Read CSV ---
 data <- read.csv("data/daily_transactions_cleaned.csv", stringsAsFactors = FALSE)
@@ -12,7 +12,7 @@ data$date_time <- as.Date(mdy_hm(data$date_time))
 
 # --- 2. Aggregate revenue per branch per day ---
 daily <- data %>%
-  group_by(date_time, branch_id) %>%            # use date_time here
+  group_by(date_time, branch_id) %>%
   summarise(revenue = sum(revenue), .groups = "drop") %>%
   pivot_wider(names_from = branch_id, values_from = revenue, values_fill = 0) %>%
   arrange(date_time) %>%
@@ -22,21 +22,23 @@ daily <- data %>%
     SMGra = SMG
   )
 
-# --- 3. Forecast next 14 days for each branch ---
-forecast_branch <- function(series, h = 14) {
-  ts_data <- ts(series, frequency = 7)
-  fit <- auto.arima(ts_data)
-  fc <- forecast(fit, h = h)
-  as.numeric(fc$mean)
+# --- 3. Forecast next 14 days using Prophet ---
+forecast_branch <- function(series, dates, h = 14) {
+  df <- data.frame(ds = dates, y = series)
+  m <- prophet(df, daily.seasonality = TRUE, weekly.seasonality = TRUE, yearly.seasonality = FALSE)
+  future <- make_future_dataframe(m, periods = h)
+  fc <- predict(m, future)
+  tail(fc$yhat, h)  # get the last h predicted values
 }
 
 fc_days <- 14
-SMValFC <- forecast_branch(daily$SMVal, fc_days)
-ValFC   <- forecast_branch(daily$Val, fc_days)
-SMGraFC <- forecast_branch(daily$SMGra, fc_days)
+last_date <- max(daily$date_time)
+
+SMValFC <- forecast_branch(daily$SMVal, daily$date_time, fc_days)
+ValFC   <- forecast_branch(daily$Val, daily$date_time, fc_days)
+SMGraFC <- forecast_branch(daily$SMGra, daily$date_time, fc_days)
 
 # --- 4. Prepare forecast dates ---
-last_date <- max(daily$date_time)
 fc_dates <- seq.Date(from = last_date + 1, by = "day", length.out = fc_days)
 fc_dates_formatted <- format(fc_dates, "%b %d")  # e.g., "Aug 16"
 
