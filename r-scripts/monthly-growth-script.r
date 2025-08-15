@@ -29,8 +29,15 @@ monthly_totals <- daily_totals %>%
   mutate(total = SMVal + Val + SMGra)
 
 # --- 4. Generate placeholder data for Jan–Apr 2025 ---
+# Determine the first month from the data
+first_month <- floor_date(min(daily_totals$date), "month")
+
+# Determine the current month
+current_month <- floor_date(Sys.Date(), "month")
+
+# Generate a sequence of months dynamically
 all_months <- data.frame(
-  month = format(seq.Date(as.Date("2025-01-01"), as.Date("2025-08-01"), by = "month"), "%Y-%m")
+  month = format(seq.Date(first_month, current_month, by = "month"), "%Y-%m")
 )
 
 monthly_totals_full <- all_months %>%

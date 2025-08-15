@@ -31,7 +31,7 @@ const chartConfig = {
     label: "SM Total of Branches",
     color: "var(--chart-1)",
   },
-  smVal: {
+  SMVal: {
     label: "SM Valenzuela",
     color: "var(--chart-2)",
   },
@@ -72,10 +72,10 @@ export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
 
   // Apply branch filtering
   const filteredData = filteredByDate.map(item => ({
-    date: item.date,
-    smVal: selectedBranches.includes("1") || selectedBranches.length === 0 ? item.smVal : null,
-    val: selectedBranches.includes("2") || selectedBranches.length === 0 ? item.val : null,
-    smGrand: selectedBranches.includes("3") || selectedBranches.length === 0 ? item.smGrand : null,
+  date: item.date,
+    SMVal: selectedBranches.includes("1") || selectedBranches.length === 0 ? item.SMVal : null,
+    Val: selectedBranches.includes("2") || selectedBranches.length === 0 ? item.Val : null,
+    SMGra: selectedBranches.includes("3") || selectedBranches.length === 0 ? item.SMGra : null,
     total: selectedBranches.includes("4") || selectedBranches.length === 0 ? item.total : null,
   }))
 
@@ -153,9 +153,9 @@ export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
             </defs>
 
             <Area dataKey="total" type="natural" fill="url(#totalGradient)" stroke="hsl(var(--chart-1))" strokeWidth={2} />
-            <Area dataKey="smVal" type="natural" fill="url(#smValGradient)" stroke="hsl(var(--chart-2))" strokeWidth={2} />
-            <Area dataKey="val" type="natural" fill="url(#valGradient)" stroke="hsl(var(--chart-3))" strokeWidth={2} />
-            <Area dataKey="smGrand" type="natural" fill="url(#smGrandGradient)" stroke="hsl(var(--chart-4))" strokeWidth={2} />
+            <Area dataKey="SMVal" type="natural" fill="url(#smValGradient)" stroke="hsl(var(--chart-2))" strokeWidth={2} />
+            <Area dataKey="Val" type="natural" fill="url(#valGradient)" stroke="hsl(var(--chart-3))" strokeWidth={2} />
+            <Area dataKey="SMGra" type="natural" fill="url(#smGrandGradient)" stroke="hsl(var(--chart-4))" strokeWidth={2} />
           </AreaChart>
         </ChartContainer>
       </CardContent>
