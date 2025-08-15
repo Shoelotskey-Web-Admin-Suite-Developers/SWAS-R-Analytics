@@ -5,7 +5,7 @@ library(jsonlite)
 library(tidyr)
 
 # --- 1. Read CSV ---
-data <- read.csv("data/daily_transactions_may15_aug15_2025.csv", stringsAsFactors = FALSE)
+data <- read.csv("data/daily_transactions_cleaned.csv", stringsAsFactors = FALSE)
 
 # Ensure proper date format and keep only the date
 data$date_time <- as.Date(mdy_hm(data$date_time))

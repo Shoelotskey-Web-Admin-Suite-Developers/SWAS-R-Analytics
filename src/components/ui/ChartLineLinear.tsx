@@ -16,12 +16,11 @@ import {
 } from "@/components/ui/chart"
 
 interface ChartLineLinearProps {
-  selectedBranches: string[]; // IDs of selected branches
+  selectedBranches: string[]
 }
 
 export const description = "A linear line chart"
 
-// Base chart data
 const rawChartData = [
   { date: "May 31", SMVal: 4200, SMValFC: 5300, Val: 1200, ValFC: 1300, SMGra: 800, SMGraFC: 700 },
   { date: "Jun 1",  SMVal: 8500, SMValFC: 9700, Val: 2000, ValFC: 2100, SMGra: 1500, SMGraFC: 1600 },
@@ -39,7 +38,6 @@ const rawChartData = [
   { date: "Jun 13", SMValFC: 1500, ValFC: 1100, SMGraFC: 500 },
 ]
 
-// Chart configuration
 const chartConfig = {
   total: { label: "Total of Branches", color: "hsl(var(--chart-1))" },
   totalFC: { label: "Total of Branches Forecasted", color: "hsl(var(--chart-1))" },
@@ -51,25 +49,15 @@ const chartConfig = {
   SMGraFC: { label: "SM Grand Forecasted", color: "hsl(var(--chart-4))" },
 } satisfies ChartConfig
 
-// Hollow dot renderer for forecast lines
 const hollowDot = (color: string) => (props: any) => {
   if (props.value === null || props.value === undefined) return null as unknown as React.ReactElement;
   const { cx, cy } = props
   return (
-    <circle
-      cx={cx}
-      cy={cy}
-      r={3}
-      fill="white"
-      stroke={color}
-      strokeWidth={2}
-      opacity={0.5}
-    />
+    <circle cx={cx} cy={cy} r={3} fill="white" stroke={color} strokeWidth={2} opacity={0.5} />
   )
 }
 
 export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
-  // Compute totals
   const chartData = rawChartData.map((item, index) => ({
     ...item,
     total: index < 7
@@ -78,10 +66,8 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
     totalFC: (item.SMValFC ?? 0) + (item.ValFC ?? 0) + (item.SMGraFC ?? 0),
   }))
 
-  // Filter data based on selectedBranches
   const filteredData = chartData.map(item => {
     const filteredItem: any = { date: item.date }
-
     if (selectedBranches.includes("1") || selectedBranches.length === 0) {
       filteredItem.SMVal = item.SMVal
       filteredItem.SMValFC = item.SMValFC
@@ -98,11 +84,18 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
       filteredItem.total = item.total
       filteredItem.totalFC = item.totalFC
     }
-
     return filteredItem
   })
 
-  const solidPct = 7 / (chartData.length - 1) // solid vs forecast
+  const solidPct = 7 / (chartData.length - 1)
+  
+  // Dynamic ReferenceArea dates
+  const forecastStartIndex = chartData.findIndex(item => item.total === null)
+  const forecastStart = chartData[forecastStartIndex]?.date
+  const forecastEnd = chartData[chartData.length - 1]?.date
+
+  const highlightStart = chartData[6]?.date
+  const highlightEnd = chartData[8]?.date
 
   return (
     <Card className="rounded-3xl">
@@ -144,18 +137,16 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
               label={{ value: "Date", position: "insideBottom", offset: -20, style: { textAnchor: "middle", fill: "var(--foreground)", fontSize: 14 } }}
             />
             
-            <ReferenceArea x1="Jun 6" x2="Jun 13" strokeOpacity={0} fill="#F0F0F0" />
-            <ReferenceArea x1="Jun 6" x2="Jun 8" strokeOpacity={0} fill="url(#yellowStripes)" />
+            <ReferenceArea x1={forecastStart} x2={forecastEnd} strokeOpacity={0} fill="#F0F0F0" />
+            <ReferenceArea x1={highlightStart} x2={highlightEnd} strokeOpacity={0} fill="url(#yellowStripes)" />
 
             <ChartTooltip cursor content={<ChartTooltipContent indicator="line" />} />
 
-            {/* Actual values */}
             <Line dataKey="total" strokeWidth={2} stroke={chartConfig.total.color} dot />
             <Line dataKey="SMVal" strokeWidth={2} stroke={chartConfig.SMVal.color} dot />
             <Line dataKey="Val" strokeWidth={2} stroke={chartConfig.Val.color} dot />
             <Line dataKey="SMGra" strokeWidth={2} stroke={chartConfig.SMGra.color} dot />
 
-            {/* Forecast values */}
             <Line dataKey="totalFC" strokeWidth={2} strokeDasharray="5 5" stroke={chartConfig.totalFC.color} dot={hollowDot(chartConfig.totalFC.color)} opacity={0.5}/>
             <Line dataKey="SMValFC" strokeWidth={2} strokeDasharray="5 5" stroke={chartConfig.SMValFC.color} dot={hollowDot(chartConfig.SMValFC.color)} opacity={0.5}/>
             <Line dataKey="ValFC" strokeWidth={2} strokeDasharray="5 5" stroke={chartConfig.ValFC.color} dot={hollowDot(chartConfig.ValFC.color)} opacity={0.5}/>
@@ -165,7 +156,7 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
         </ChartContainer>
       </CardContent>
 
-       <CardFooter className="justify-end gap-6 -mt-10">
+      <CardFooter className="justify-end gap-6 -mt-10">
         <div className="flex items-center gap-2 text-sm text-gray-700">
           <span className="inline-block w-6 h-[2px] bg-black"></span>
           <span>Actual Data</span>
@@ -175,7 +166,6 @@ export function ChartLineLinear({ selectedBranches }: ChartLineLinearProps) {
           <span>Forecasted Data</span>
         </div>
       </CardFooter>
-
     </Card>
   )
 }

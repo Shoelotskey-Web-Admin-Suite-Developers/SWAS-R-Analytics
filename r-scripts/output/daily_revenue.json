@@ -649,5 +649,54 @@
     "Val": 2711.97,
     "SMGra": 2698.95,
     "total": 8409.49
+  },
+  {
+    "date": "Aug 16",
+    "SMVal": 1370,
+    "Val": 1287.3,
+    "SMGra": 725,
+    "total": 3382.3
+  },
+  {
+    "date": "Aug 17",
+    "SMVal": 790.5,
+    "Val": 1362,
+    "SMGra": 637.5,
+    "total": 2790
+  },
+  {
+    "date": "Aug 18",
+    "SMVal": 737.5,
+    "Val": 875,
+    "SMGra": 188,
+    "total": 1800.5
+  },
+  {
+    "date": "Aug 19",
+    "SMVal": 925,
+    "Val": 212,
+    "SMGra": 225,
+    "total": 1362
+  },
+  {
+    "date": "Aug 20",
+    "SMVal": 737.5,
+    "Val": 1150,
+    "SMGra": 500,
+    "total": 2387.5
+  },
+  {
+    "date": "Aug 21",
+    "SMVal": 790.5,
+    "Val": 875,
+    "SMGra": 225,
+    "total": 1890.5
+  },
+  {
+    "date": "Aug 22",
+    "SMVal": 737.5,
+    "Val": 1150,
+    "SMGra": 188,
+    "total": 2075.5
   }
 ]
