@@ -16,50 +16,77 @@ daily_totals <- daily_data %>%
   rename(SMVal = SMV, Val = VAL, SMGra = SMG) %>%
   arrange(date)
 
-# --- 3. Convert daily totals to monthly totals ---
+# --- 3. Determine months to update (last 2 + current month) ---
 daily_totals$month <- format(daily_totals$date, "%Y-%m")
-monthly_totals <- daily_totals %>%
+latest_month <- max(daily_totals$month)
+previous_month <- format(as.Date(paste0(latest_month, "-01")) %m-% months(1), "%Y-%m")
+two_months_ago <- format(as.Date(paste0(latest_month, "-01")) %m-% months(2), "%Y-%m")
+
+months_to_update <- c(two_months_ago, previous_month, latest_month)
+
+# --- 4. Aggregate only those months ---
+monthly_totals_update <- daily_totals %>%
+  filter(month %in% months_to_update) %>%
   group_by(month) %>%
   summarise(
     SMVal = sum(SMVal),
-    Val = sum(Val),
+    Val   = sum(Val),
     SMGra = sum(SMGra),
     .groups = "drop"
   ) %>%
   mutate(total = SMVal + Val + SMGra)
 
-# --- 4. Generate placeholder data for Jan–Apr 2025 ---
-all_months <- data.frame(
-  month = format(seq.Date(as.Date("2025-01-01"), as.Date("2025-08-01"), by = "month"), "%Y-%m")
-)
+# --- 5. Load or initialize monthly totals file ---
+json_file <- "output/monthly_revenue_totals.json"
+current_year <- year(Sys.Date())
 
-monthly_totals_full <- all_months %>%
-  left_join(monthly_totals, by = "month") %>%
-  mutate(
-    SMVal = ifelse(is.na(SMVal), 0, SMVal),
-    Val = ifelse(is.na(Val), 0, Val),
-    SMGra = ifelse(is.na(SMGra), 0, SMGra),
-    total = SMVal + Val + SMGra
+if(file.exists(json_file)){
+  monthly_totals_full <- fromJSON(json_file) %>% as.data.frame()
+
+  # Find the highest year present in existing data or daily data
+  last_existing_month <- max(monthly_totals_full$month)
+  last_existing_date <- as.Date(paste0(last_existing_month, "-01"))
+  target_year <- max(year(daily_totals$date), year(last_existing_date), current_year)
+
+  # Add missing months from last_existing_date +1 to target_year Dec
+  end_date_needed <- as.Date(paste0(target_year, "-12-01"))
+  start_date_needed <- last_existing_date %m+% months(1)
+
+  if(start_date_needed <= end_date_needed){
+    months_needed <- seq.Date(start_date_needed, end_date_needed, by = "month")
+    if(length(months_needed) > 0){
+      extra_months <- data.frame(
+        month = format(months_needed, "%Y-%m"),
+        SMVal = 0, Val = 0, SMGra = 0, total = 0
+      )
+      monthly_totals_full <- bind_rows(monthly_totals_full, extra_months)
+    }
+  }
+
+} else {
+  # Initialize from Jan to Dec of current year
+  monthly_totals_full <- data.frame(
+    month = format(seq.Date(as.Date(paste0(current_year, "-01-01")),
+                            as.Date(paste0(current_year, "-12-01")), by = "month"), "%Y-%m"),
+    SMVal = 0, Val = 0, SMGra = 0, total = 0
   )
-
-# --- 5. Apply monthly growth if growth file exists ---
-# Example growth file: data/monthly_growth.csv with columns: month, SMV_growth, VAL_growth, SMG_growth
-if(file.exists("data/monthly_growth.csv")){
-  growth <- read.csv("data/monthly_growth.csv", stringsAsFactors = FALSE)
-  
-  monthly_totals_full <- monthly_totals_full %>%
-    left_join(growth, by = "month") %>%
-    mutate(
-      SMVal = ifelse(!is.na(SMV_growth), SMVal * SMV_growth, SMVal),
-      Val   = ifelse(!is.na(VAL_growth), Val * VAL_growth, Val),
-      SMGra = ifelse(!is.na(SMG_growth), SMGra * SMG_growth, SMGra),
-      total = SMVal + Val + SMGra
-    ) %>%
-    select(month, SMVal, Val, SMGra, total)
 }
 
-# --- 6. Export JSON ---
-if(!dir.exists("output")) dir.create("output")
-write_json(monthly_totals_full, "output/monthly_revenue_totals.json", pretty = TRUE)
+# --- 6. Update only selected months ---
+monthly_totals_full <- monthly_totals_full %>%
+  left_join(monthly_totals_update, by = "month", suffix = c("", ".upd")) %>%
+  mutate(
+    SMVal = ifelse(!is.na(SMVal.upd), SMVal.upd, SMVal),
+    Val   = ifelse(!is.na(Val.upd), Val.upd, Val),
+    SMGra = ifelse(!is.na(SMGra.upd), SMGra.upd, SMGra),
+    total = SMVal + Val + SMGra
+  ) %>%
+  select(month, SMVal, Val, SMGra, total) %>%
+  arrange(month)
 
-cat("✅ Monthly totals exported to output/monthly_revenue_totals.json\n")
+# --- 7. Export JSON ---
+if(!dir.exists("output")) dir.create("output")
+write_json(monthly_totals_full, json_file, pretty = TRUE)
+
+cat("✅ Monthly totals updated for:", paste(months_to_update, collapse = ", "), "\n")
+cat("📄 Output file:", json_file, "\n")

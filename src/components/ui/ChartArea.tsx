@@ -104,15 +104,6 @@ export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
     .map((_, i) => i)
     .filter(i => i % Math.ceil(filteredData.length / maxTicks) === 0)
 
-  // Dot renderer
-  const renderDot = (props: any, color: string) => {
-    const { index, cx, cy } = props
-    if (tickIndices.includes(index)) {
-      return <circle cx={cx} cy={cy} r={3} fill={color} />
-    }
-    return null
-  }
-
 
   return (
     <Card className="rounded-3xl">
@@ -183,10 +174,10 @@ export function ChartAreaDefault({ selectedBranches }: ChartLineLinearProps) {
               </linearGradient>
             </defs>
 
-            <Area dataKey="total" type="natural" fill="url(#totalGradient)" stroke="hsl(var(--chart-1))" strokeWidth={2} dot={(p) => renderDot(p, "hsl(var(--chart-1))")}/>
-            <Area dataKey="smVal" type="natural" fill="url(#smValGradient)" stroke="hsl(var(--chart-2))" strokeWidth={2} dot={(p) => renderDot(p, "hsl(var(--chart-2))")}/>
-            <Area dataKey="val" type="natural" fill="url(#valGradient)" stroke="hsl(var(--chart-3))" strokeWidth={2} dot={(p) => renderDot(p, "hsl(var(--chart-3))")}/>
-            <Area dataKey="smGrand" type="natural" fill="url(#smGrandGradient)" stroke="hsl(var(--chart-4))" strokeWidth={2} dot={(p) => renderDot(p, "hsl(var(--chart-4))")}/>
+            <Area dataKey="total" type="natural" fill="url(#totalGradient)" stroke="hsl(var(--chart-1))" strokeWidth={2} />
+            <Area dataKey="smVal" type="natural" fill="url(#smValGradient)" stroke="hsl(var(--chart-2))" strokeWidth={2} />
+            <Area dataKey="val" type="natural" fill="url(#valGradient)" stroke="hsl(var(--chart-3))" strokeWidth={2} />
+            <Area dataKey="smGrand" type="natural" fill="url(#smGrandGradient)" stroke="hsl(var(--chart-4))" strokeWidth={2} />
           </AreaChart>
         </ChartContainer>
       </CardContent>
