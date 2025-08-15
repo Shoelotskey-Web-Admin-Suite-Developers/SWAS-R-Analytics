@@ -12,7 +12,7 @@ data$date_time <- as.Date(mdy_hm(data$date_time))
 
 # --- 2. Aggregate revenue per branch per day ---
 daily <- data %>%
-  group_by(date, branch_id) %>%
+  group_by(date_time, branch_id) %>%            # use date_time here
   summarise(revenue = sum(revenue), .groups = "drop") %>%
   pivot_wider(names_from = branch_id, values_from = revenue, values_fill = 0) %>%
   arrange(date_time) %>%
@@ -36,7 +36,7 @@ ValFC   <- forecast_branch(daily$Val, fc_days)
 SMGraFC <- forecast_branch(daily$SMGra, fc_days)
 
 # --- 4. Prepare forecast dates ---
-last_date <- max(daily$date)
+last_date <- max(daily$date_time)
 fc_dates <- seq.Date(from = last_date + 1, by = "day", length.out = fc_days)
 fc_dates_formatted <- format(fc_dates, "%b %d")  # e.g., "Aug 16"
 
@@ -51,4 +51,4 @@ forecast_data <- data.frame(
 # --- 6. Export JSON ---
 write_json(forecast_data, "public/output/daily_revenue_forecast.json", pretty = TRUE)
 
-cat("✅ JSON exported to r-scripts/output/daily_revenue_forecast.json\n")
+cat("✅ JSON exported to public/output/daily_revenue_forecast.json\n")
